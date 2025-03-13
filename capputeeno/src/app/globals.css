@@ -2,26 +2,25 @@
   --border-radius: 12px;
   --logo-color: #5D5D6D;
   --bg-secondary: #F3F5F6;
+  --bg-primary: #F0F0F5;
   --text-dark: #737380;
-  --delete-color: #DE3838;
+  --shapes-dark: #09090A;
+  --text-dark-2: #41414D;
+  --delete-color: #DE3838; 
   --orange-low: #FFA585;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  min-height: 100vh;
-
-}
-
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --shapes: #DCE2E6;
+  --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --default-transition-duration: 150ms;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
