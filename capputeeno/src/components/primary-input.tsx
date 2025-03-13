@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { SearchIcon } from "./search-loupe";
+import { SearchIcon } from "./icons/search-loupe";
 import { InputHTMLAttributes } from "react";
 
 export const PrimaryInput = styled.input`
