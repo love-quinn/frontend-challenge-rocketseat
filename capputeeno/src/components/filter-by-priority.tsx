@@ -1,14 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-empty-object-type */
 import { styled } from "styled-components"
 import { ArrowIcon } from "./arrow-icon"
 import { useState } from "react"
 import { useFilter } from "@/hooks/useFilter"
 import { PriorityTypes } from "@/types/priority-types"
 
-interface FilterByPriorityProps {
-
-}
 
 const FilterContainer = styled.div`
     display: flex;
@@ -45,6 +40,7 @@ const PriorityFilter = styled.ul`
     padding: 12px 16px;
 
     list-style: none;
+    z-index: 1;
 
     top: 100%;
 
@@ -61,7 +57,7 @@ const PriorityFilter = styled.ul`
     }
 `
 
-export function FilterByPriority(props : FilterByPriorityProps){
+export function FilterByPriority(){
     const [isOpen, setIsOpen] = useState(false)
     const { setPriority } = useFilter()
 

@@ -1,6 +1,6 @@
-import { styled } from "styled-components"
-import { SearchIcon } from "./search-loupe"
-import { InputHTMLAttributes } from "react"
+import { styled } from "styled-components";
+import { SearchIcon } from "./search-loupe";
+import { InputHTMLAttributes } from "react";
 
 export const PrimaryInput = styled.input`
     width: 352px;
@@ -15,7 +15,7 @@ export const PrimaryInput = styled.input`
     font-size: 14px;
     line-height: 22px;
     color: var(--text-dark);
-`
+`;
 
 const InputContainer = styled.div`
     position: relative;
@@ -25,20 +25,22 @@ const InputContainer = styled.div`
         position: absolute;
         right: 20px;
         top: 50%;
-        transform: translateY(-50%)
+        transform: translateY(-50%);
     }
-`
+`;
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+    value: string;
+    handleChange: (value: string) => void;
+}
 
-export function PrimaryInputWSearchIcon(props: InputProps){
+export function PrimaryInputWSearchIcon({ handleChange, ...props }: InputProps) {
     return (
         <div>
             <InputContainer>
-                <PrimaryInput {...props}/>
-                <SearchIcon/>
+                <PrimaryInput onChange={(event) => handleChange(event.target.value)} {...props} />
+                <SearchIcon />
             </InputContainer>
         </div>
-    )
+    );
 }

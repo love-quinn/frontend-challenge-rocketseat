@@ -1,8 +1,8 @@
-"use client";
+"use client"
 
-import useProducts from "@/hooks/useProducts";
+import { useProducts } from "@/hooks/useProducts"
 import { ProductCard } from "./product-card";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 const ListContainer = styled.div`
     display: grid;
@@ -13,20 +13,18 @@ const ListContainer = styled.div`
     margin-top: 32px;
 `
 
-const ProductList = () => {
-  const { data } = useProducts();
-  return (
-    <ListContainer>
-      {data?.map((product) => (
-        <ProductCard
-          key={product.id}
-          title={product.name}
-          price={product.price_in_cents}
-          image={product.image_url}
-        />
-      ))}
+export function ProductsList(){
+    const { data } = useProducts();
+    return(
+        <ListContainer>
+            {data?.map(product => 
+            <ProductCard
+                key={product.id}
+                title={product.name}
+                price={product.price_in_cents}
+                image={product.image_url}
+            />
+            )}
     </ListContainer>
-  );
-};
-
-export default ProductList;
+    )
+}
